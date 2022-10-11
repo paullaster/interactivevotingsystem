@@ -26,10 +26,10 @@
                 if ( aspirants.length > 0) {
                     let output = document.getElementById ( 'output' );
                     let row = document.createElement ( 'tr');
+                    let col1 = document.createElement ( 'td');
+                    let col2 = document.createElement ( 'td');
+                    let col3 = document.createElement ( 'td');
                     aspirants.forEach ( (asp, index) => {
-                        let col1 = document.createElement ( 'td');
-                        let col2 = document.createElement ( 'td');
-                        let col3 = document.createElement ( 'td');
                         col1.textContent = index + 1;
                         col2.textContent = asp.charAt(0).trim().toUpperCase() + asp.slice(1);
                         col3.textContent =  0;
