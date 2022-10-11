@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Complete JavaScript Course</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div id="message">Complete JavaScript Course</div>
+        <div>
+        <input type="text" id="addFriend">
+        <input type="button" id="addNew" value="Add Aspirant">
+        </div>
+        <table id="output">
+
+        </table>
+        <script>
+            let aspirant = document.getElementById ( 'addFriend' );
+            let addNewAspirant = document.getElementById ( 'addNew');
+            addNewAspirant.addEventListener ( 'click', newAspirant);
+            let aspirants = [];
+            function newAspirant () {
+                let aspirantName = aspirant.value.trim();
+                aspirants.push ( aspirantName );
+                if ( aspirants.length > 0) {
+                    let output = document.getElementById ( 'output' );
+                    let row = document.createElement ( 'tr');
+                    aspirants.forEach ( (asp, index) => {
+                        let col1 = document.createElement ( 'td');
+                        let col2 = document.createElement ( 'td');
+                        let col3 = document.createElement ( 'td');
+                        col1.textContent = index + 1;
+                        col2.textContent = asp.charAt(0).trim().toUpperCase() + asp.slice(1);
+                        col3.textContent =  0;
+                        row.appendChild ( col1 );
+                        row.appendChild ( col2 );
+                        row.appendChild (col3);
+                    });
+                    output.appendChild (row);
+                }
+            };
+        </script>
+    </body>
+</html>
